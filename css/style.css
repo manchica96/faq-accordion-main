@@ -1,0 +1,149 @@
+:root {
+    --text-light: hsl(275, 100%, 97%);
+    --text-dark: hsl(292, 42%, 14%);
+    --text-muted: hsl(292, 16%, 49%);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    color: var(--text-dark);
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-size: 1rem;
+    min-height: 100vh;
+    background-color: var(--text-light);
+}
+.container {
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 1320px;
+}
+.row {
+    --bs-gutter-x: 2rem;
+    --bs-gutter-y: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+}
+.text-light {
+    color: var(--text-light);
+}
+.text-muted {
+    color: var(--text-muted);
+}
+
+
+.fw-normal {
+    font-weight: 400;
+}
+h3 {
+    margin-bottom: .8rem;
+}
+p {
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2rem;
+}
+.py {
+    padding: 2rem 0;
+}
+.py-5 {
+    padding: 3rem 0;
+}
+.heading {
+    padding-left: 1rem;
+    font-size:3.7em;
+    display: inline;
+}
+.mt-2 {
+    margin-top: 2rem;
+}
+
+
+.card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem 3.5rem;
+    max-width: 650px;
+    margin: 0 auto;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) ;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+.divider {
+    width: 100%;
+    border: 1px solid var(--text-light);
+    opacity: .6;
+}
+
+
+
+
+
+.accordion-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 400ms ease;
+}
+.accordion.active {
+    transition: 400ms all ease;
+    .accordion-collapse {
+        max-height: 300px;
+    }
+    .accordion-btn::after {
+        background-image: url(/assets/images/icon-minus.svg);
+    }
+}
+
+.accordion-btn::after {
+    content: '';
+    flex-shrink: 0;
+    margin-left: auto;
+    background-image: url(/assets/images/icon-plus.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 400ms all ease;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 2rem;
+    width: 2rem;
+
+}
+.accordion-btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+    border: 0;
+    font-family: inherit;
+    background-color: transparent;
+    padding: 0;
+    color: var(--text-dark);
+    width: 93%;
+    transition: 400ms all ease;
+}
+.accordion-item:hover {
+    .accordion-btn {
+        color: var(--text-muted) !important;
+        transition: 400ms all ease;
+    }
+}
+.accordion-header {
+    position: relative;
+}
